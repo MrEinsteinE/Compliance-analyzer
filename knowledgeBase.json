@@ -1,0 +1,1317 @@
+[
+  {
+    "country": "IN",
+    "law": "IT Act, 2000 (Section 43A)",
+    "clause_id": "IN-IT-43A-SecurityPractices",
+    "clause_text": "Reasonable Security Practices and Procedures: Organizations must implement reasonable security practices and procedures appropriate to the nature of the information assets they handle.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Compensation payable for failure to protect data resulting in a breach"
+      }
+    ],
+    "evidence_required": [
+      "Security policy documents",
+      "Access control logs",
+      "Encryption protocols"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA 2010",
+    "clause_id": "IN-FCRA-Renewal-FormFC3C",
+    "clause_text": "FCRA registration must be renewed every 5 years by filing Form FC-3C at least 6 months prior to expiry.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "If not renewed on time, organisation loses legal authority to receive or use foreign funds."
+      }
+    ],
+    "evidence_required": [
+      "Submitted Form FC-3C",
+      "Renewal acknowledgment",
+      "Affidavit in Proforma 'AA'"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Governance Code",
+    "clause_id": "IN-GOV-Board-Meetings",
+    "clause_text": "The governing board of an NGO must meet at least once every six months to review FCRA compliance and record minutes.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to conduct timely meetings may imply non-compliance with governance best practices."
+      }
+    ],
+    "evidence_required": [
+      "Board meeting minutes",
+      "Compliance review records"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA / FATF Guidelines",
+    "clause_id": "IN-FCRA-FATF-Guidelines",
+    "clause_text": "NGOs must adhere to FATF good practice guidelines including website disclosure of key persons, due diligence, and financial transparency.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-compliance may result in FCRA registration suspension or cancellation."
+      }
+    ],
+    "evidence_required": [
+      "Website with disclosed board members",
+      "Staff due diligence records",
+      "Online uploaded FCRA financials"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA Rule 5",
+    "clause_id": "IN-FCRA-AdminLimit",
+    "clause_text": "Administrative expenses should not exceed 20% of the total foreign contribution received.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Exceeding limits can lead to inquiry or suspension of FCRA registration."
+      }
+    ],
+    "evidence_required": [
+      "Audited income & expenditure statement",
+      "Chartered accountant certificate"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act",
+    "clause_id": "IN-IT-20Percent-Limit",
+    "clause_text": "An NPO under 'general public utility' cannot earn business income exceeding 20% of total receipts to retain tax exemption.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Tax exemption under Section 12AB or 10(23C) may be revoked and income taxed at maximum rate."
+      }
+    ],
+    "evidence_required": [
+      "Separate books for business income",
+      "Income tax filings",
+      "Audited financials"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA / NITI Aayog",
+    "clause_id": "IN-FCRA-DARPAN-ID",
+    "clause_text": "NGOs applying for FCRA registration or renewal must have a valid NGO DARPAN ID from NITI Aayog.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Application may be rejected or delayed without a DARPAN ID."
+      }
+    ],
+    "evidence_required": [
+      "Copy of DARPAN ID registration",
+      "DARPAN profile screenshot"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Maharashtra Public Trusts Act, 1950",
+    "clause_id": "IN-MPTA-ChangeReports",
+    "clause_text": "Trusts in Maharashtra must file change reports for any changes in trustees, property, or objects with the Charity Commissioner.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to file change reports can result in inquiries and legal scrutiny from the Charity Commissioner."
+      }
+    ],
+    "evidence_required": [
+      "Copy of submitted change report",
+      "Acknowledgment from Charity Commissioner"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961 - Section 11(5)",
+    "clause_id": "IN-IT-InvestmentRules",
+    "clause_text": "Tax-exempt NGOs must invest surplus funds only in modes specified under Section 11(5) such as government securities, bank deposits, or specified mutual funds.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Improper investments may lead to loss of exemption under Section 12AB."
+      }
+    ],
+    "evidence_required": [
+      "Investment portfolio records",
+      "Auditor certification of Section 11(5) compliance"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-CorpusDonationProof",
+    "clause_text": "To treat a donation as corpus, a written direction from the donor is mandatory.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Corpus donations without written direction may be treated as income and taxed accordingly."
+      }
+    ],
+    "evidence_required": [
+      "Signed corpus donation letters",
+      "Ledger entries marked as corpus"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA 2010, Rule 17",
+    "clause_id": "IN-FCRA-RecordPreservation",
+    "clause_text": "All FCRA-related accounting records must be preserved for six years and maintained on a double-entry basis.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-compliance can lead to rejection during audits or inspections."
+      }
+    ],
+    "evidence_required": [
+      "Cash book and ledger",
+      "Certified bank statements from SBI and utilisation accounts"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA + FATF Guidelines",
+    "clause_id": "IN-FCRA-BeneficiaryDisclosure",
+    "clause_text": "NGOs must disclose beneficiary details and upload key personnel information on their official website.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Lack of transparency could lead to inquiries, suspension, or cancellation of FCRA registration."
+      }
+    ],
+    "evidence_required": [
+      "Screenshots or URLs of NGO website",
+      "Published beneficiary and personnel records"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Governance Code / Trust & Companies Acts",
+    "clause_id": "IN-GOV-ConflictOfInterest",
+    "clause_text": "Trustees, directors, and office bearers must disclose potential conflicts of interest, including indirect affiliations and financial relationships.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to disclose conflicts may result in breach of fiduciary duty and personal liability."
+      }
+    ],
+    "evidence_required": [
+      "Conflict of Interest Policy",
+      "Signed disclosure forms",
+      "Board minutes noting disclosures"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA Rule 4",
+    "clause_id": "IN-FCRA-NoSpeculation",
+    "clause_text": "Foreign contributions shall not be invested in speculative assets including mutual funds, stocks, or securities.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Violation can lead to cancellation of registration or forfeiture of funds."
+      }
+    ],
+    "evidence_required": [
+      "Investment records",
+      "Bank statements showing compliance"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act - Section 115BBC",
+    "clause_id": "IN-IT-AnonymousDonations",
+    "clause_text": "Anonymous donations exceeding 5% of total income or ₹1 lakh (whichever is higher) are taxable.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Excess anonymous donations are taxed at 30%."
+      }
+    ],
+    "evidence_required": [
+      "Donor identification records",
+      "PAN and contact details of donors"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "General Governance Norms",
+    "clause_id": "IN-GOV-BoardTermRotation",
+    "clause_text": "NGOs should define board member terms to allow staggered rotation and avoid permanent tenure unless justified.",
+    "category": "recommended",
+    "penalties": [
+      {
+        "details": "Lack of rotation could impact transparency and sustainability, especially in audit reviews."
+      }
+    ],
+    "evidence_required": [
+      "Trust deed or AoA with term limits",
+      "Board member appointment letters"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, Finance Act 2023",
+    "clause_id": "IN-IT-InterCharityDonations",
+    "clause_text": "Donations from one exempt NGO to another are limited; only 85% of such donations are treated as application of income.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Improper treatment may result in denial of exemption under Section 11/12."
+      }
+    ],
+    "evidence_required": [
+      "Donation agreements",
+      "Accounting entries and bank transfers"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA",
+    "clause_id": "IN-FCRA-AnnualReturn-CA",
+    "clause_text": "Annual return in Form FC-4 must be filed online by 31st December each year with CA-certified financials, even if no foreign funds are received (file Nil return).",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Delayed or absent filings may result in cancellation of FCRA registration."
+      }
+    ],
+    "evidence_required": [
+      "Form FC-4 return copy",
+      "CA-certified income/expenditure and balance sheet",
+      "SBI FCRA account statement"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA / FATF Guidelines",
+    "clause_id": "IN-FCRA-FATF-DueDiligence",
+    "clause_text": "NGOs must upload beneficiary data and conduct due diligence of employees, board members, and key stakeholders under FATF good practice guidelines.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-compliance may trigger MHA inquiry and risk of registration suspension."
+      }
+    ],
+    "evidence_required": [
+      "Background checks",
+      "Public website disclosures",
+      "Beneficiary registry uploads"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "POSH Act, 2013",
+    "clause_id": "IN-POSH-NonCompliance",
+    "clause_text": "Failure to constitute an Internal Complaints Committee or submit annual POSH compliance reports may attract financial and operational penalties.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Penalty of ₹50,000 for first offense; repeat offenses may lead to cancellation of registration/license."
+      }
+    ],
+    "evidence_required": [
+      "POSH Committee meeting records",
+      "Annual report filed with District Officer",
+      "Training and grievance redressal records"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA (Amendment 2020)",
+    "clause_id": "IN-FCRA-Suspension-SummaryInquiry",
+    "clause_text": "MHA may suspend FCRA registration for up to 360 days via summary inquiry if any contravention is suspected.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Bank accounts may be frozen and foreign contributions blocked without full cancellation of registration."
+      }
+    ],
+    "evidence_required": [
+      "MHA show-cause notice",
+      "Organizational response documents",
+      "Board-level meeting minutes"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA Rule 13",
+    "clause_id": "IN-FCRA-RecordRetention",
+    "clause_text": "All foreign contribution accounts, ledgers, and returns must be retained for at least six years from the end of the relevant financial year.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Inadequate documentation may cause audit failure or registration suspension."
+      }
+    ],
+    "evidence_required": [
+      "Accounting records (double-entry)",
+      "Digital and physical copies of filings",
+      "Version-controlled storage logs"
+    ]
+  },
+  {
+    "country": "EU",
+    "law": "GDPR (General Data Protection Regulation)",
+    "clause_id": "EU-GDPR-DataRights-Consent",
+    "clause_text": "NGOs operating in the EU or processing EU resident data must implement mechanisms for data subjects to access, rectify, erase, restrict, and object to the processing of their personal data. Consent must be freely given, specific, informed, and unambiguous.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-compliance can attract fines up to €20 million or 4% of global annual turnover, whichever is higher."
+      }
+    ],
+    "evidence_required": [
+      "Data subject consent logs",
+      "Privacy policies",
+      "Records of processing activities (RoPA)",
+      "Access logs for data subject requests"
+    ]
+  },
+  {
+    "country": "EU",
+    "law": "GDPR (Articles 44-49)",
+    "clause_id": "EU-GDPR-CrossBorderTransfer",
+    "clause_text": "NGOs transferring personal data outside the EU must ensure an adequate level of protection through mechanisms such as Standard Contractual Clauses (SCCs), adequacy decisions, or Binding Corporate Rules (BCRs).",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Unlawful data transfers can result in international investigation and penalties under GDPR enforcement mechanisms."
+      }
+    ],
+    "evidence_required": [
+      "Signed SCCs or BCR documents",
+      "Data transfer impact assessments",
+      "Third-country vendor due diligence reports"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-CharitablePurpose-Definition",
+    "clause_text": "Charitable purpose includes relief of the poor, education, medical relief, and the advancement of any other object of general public utility. However, it shall not include any activity in the nature of trade, commerce or business, or service in relation thereto for a fee or consideration.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Violation may lead to denial of exemption under Sections 11 and 12."
+      }
+    ],
+    "evidence_required": [
+      "Registration certificate under 12A/12AB",
+      "Income application breakdown",
+      "Audit reports validating charitable intent"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-12AB-Registration",
+    "clause_text": "No NGO can claim exemption under Sections 11 and 12 unless it is registered under Section 12AB. Application must be submitted via Form 10A along with relevant documents within 1 year of formation.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Income becomes fully taxable if not registered under Section 12AB."
+      }
+    ],
+    "evidence_required": [
+      "Valid 12AB registration certificate",
+      "Application Form 10A",
+      "Audit reports of prior 3 years"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-Section11-Exemption",
+    "clause_text": "At least 85% of the NGO’s income must be applied for charitable or religious purposes in India. Unspent income can be accumulated for specific purposes under Form 9A or 10.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to apply 85% of income may lead to denial of exemption under Section 11."
+      }
+    ],
+    "evidence_required": [
+      "Form 9A/10",
+      "Income application statement",
+      "Project or capital expenditure plan"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-Section13-Disqualifications",
+    "clause_text": "Exemption under Sections 11 and 12 is denied if the NGO benefits trustees, founders, or related parties directly or indirectly, including payments or investments to entities where such persons hold substantial interest.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Full taxation of income and potential legal scrutiny for private benefit."
+      }
+    ],
+    "evidence_required": [
+      "Transaction register",
+      "Conflict of interest declarations",
+      "Related party disclosures"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-115BBC-AnonymousDonations-Clarified",
+    "clause_text": "Anonymous donations exceeding 5% of total income or ₹1 lakh (whichever is higher) are taxable at 30%. Religious institutions are exempt from this clause unless the donation is for a specific educational/medical wing.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Excess anonymous donations taxed at flat 30%."
+      }
+    ],
+    "evidence_required": [
+      "Donor register with PAN, name, address",
+      "Receipts or donation ledger",
+      "Form 10BD/10BE filings"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Income Tax Act, 1961",
+    "clause_id": "IN-IT-80G-DonorDeduction",
+    "clause_text": "NGOs must have valid 80G registration to enable donors to claim tax deduction. Cash donations over ₹2,000 are not deductible. Donations must be documented and reported in Form 10BD.",
+    "category": "optional",
+    "penalties": [
+      {
+        "details": "Loss of 80G approval and donor incentives if reporting is incomplete or non-compliant."
+      }
+    ],
+    "evidence_required": [
+      "80G approval certificate",
+      "Form 10BD/10BE",
+      "Donor receipts with payment mode"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "Finance Act, 2023",
+    "clause_id": "IN-IT-InterCharityDonations-85PercentRule",
+    "clause_text": "If one exempt NGO donates to another, only 85% of such donation is treated as application of income. Donations to another NGO’s corpus are not considered application of income.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Excess donations may be taxed if treated as misapplied income."
+      }
+    ],
+    "evidence_required": [
+      "Donation agreements",
+      "Form 10B audit confirmation",
+      "Non-corpus utilization evidence"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-Applicability",
+    "clause_text": "The Act applies to processing of digital personal data within India, and to processing outside India if it involves offering goods or services to individuals in India.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-compliance may attract penalties up to ₹250 crore per instance under Section 33."
+      }
+    ],
+    "evidence_required": [
+      "Data processing maps",
+      "Cross-border service documentation",
+      "Privacy policy disclosures"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-DataBreachNotification",
+    "clause_text": "Data Fiduciaries must report personal data breaches to the Data Protection Board and affected Data Principals in a timely manner.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to report a breach may lead to fines up to ₹200 crore."
+      }
+    ],
+    "evidence_required": [
+      "Breach response plan",
+      "Incident logs",
+      "Board notification records"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-ChildDataProcessing",
+    "clause_text": "Processing of personal data of children (<18 years) requires verifiable parental consent and must not involve tracking or targeted advertising.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Violation may result in severe penalties under the DPDP framework."
+      }
+    ],
+    "evidence_required": [
+      "Parental consent logs",
+      "Child data segregation",
+      "Ad targeting audit results"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-PurposeLimitation",
+    "clause_text": "NGOs must collect and process only such personal data that is necessary for a lawful purpose clearly specified to the Data Principal.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Unlawful or excessive data collection may lead to inquiry by the Data Protection Board."
+      }
+    ],
+    "evidence_required": [
+      "Privacy notices",
+      "Purpose logs",
+      "Data inventory mapping"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-SignificantDataFiduciary",
+    "clause_text": "NGOs that meet thresholds related to data volume, sensitivity, or risk to rights of individuals may be designated as Significant Data Fiduciaries and must comply with enhanced obligations including appointment of a Data Protection Officer.",
+    "category": "mandatory-if-designated",
+    "penalties": [
+      {
+        "details": "Non-compliance by SDFs may result in strict enforcement, audits, and penalties up to ₹250 crore."
+      }
+    ],
+    "evidence_required": [
+      "Government SDF designation notice",
+      "Appointment letter of DPO",
+      "Risk assessment report"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-CrossBorderTransfer",
+    "clause_text": "Transfer of digital personal data outside India may be restricted to countries notified by the Central Government. NGOs must ensure lawful transfer protocols and adequate safeguards.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Unlawful cross-border transfer may trigger investigation and potential bans."
+      }
+    ],
+    "evidence_required": [
+      "Data transfer impact assessments",
+      "Country whitelist documentation",
+      "Contractual safeguards with overseas partners"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-DataProtectionOfficer",
+    "clause_text": "Significant Data Fiduciaries must appoint a Data Protection Officer (DPO) responsible for grievance handling and compliance under the Act.",
+    "category": "mandatory-if-designated",
+    "penalties": [
+      {
+        "details": "Failure to appoint a DPO may result in audit failure or non-compliance orders."
+      }
+    ],
+    "evidence_required": [
+      "DPO appointment record",
+      "Job responsibilities and compliance charter",
+      "Annual reporting structure"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-NoticeConsentFormat",
+    "clause_text": "Before collecting any personal data, NGOs must issue a clear notice specifying the purpose of data processing and obtain valid consent in a standardized format.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Non-standard or missing consent notices may invalidate data collection."
+      }
+    ],
+    "evidence_required": [
+      "Sample notice templates",
+      "Consent receipts",
+      "User communication logs"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-LawfulGrounds",
+    "clause_text": "NGOs may process personal data only with valid consent or under legitimate uses permitted by law. No processing is allowed for a purpose expressly forbidden by law.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Unlawful processing can result in regulatory action or penalties up to ₹250 crore."
+      }
+    ],
+    "evidence_required": [
+      "Consent logs",
+      "Documented lawful basis (e.g., government directive)",
+      "Data use registry"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-NoticeRequirement",
+    "clause_text": "Every request for consent must be preceded or accompanied by a clear notice outlining data categories, purpose, rights of the data principal, and contact for redressal, in English or a scheduled Indian language.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to deliver proper notice invalidates consent and violates Section 5."
+      }
+    ],
+    "evidence_required": [
+      "Multilingual consent notice formats",
+      "In-app/web interface screenshots",
+      "Record of user notifications"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-ValidConsent",
+    "clause_text": "Consent must be free, informed, specific, unambiguous, and limited to the data necessary for the specified purpose. Consent must be revocable and presented in clear language.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Any consent violating these principles is deemed invalid under Section 6."
+      }
+    ],
+    "evidence_required": [
+      "Consent interaction logs",
+      "Proof of separate opt-ins",
+      "Mechanism for consent withdrawal"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-DataAccuracy",
+    "clause_text": "Where personal data is used to make decisions about the Data Principal or shared with another fiduciary, the Data Fiduciary must ensure its accuracy, completeness, and consistency.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Inaccurate data processing could result in penalties and harm to data subjects."
+      }
+    ],
+    "evidence_required": [
+      "Automated data validation logs",
+      "Disclosure registry",
+      "Update/rectification request system"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-DataRetentionErasure",
+    "clause_text": "NGOs must erase personal data when consent is withdrawn or when the purpose is no longer served, unless retention is mandated by law. Processors must also erase such data.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to erase unnecessary data may lead to compliance breach and fines."
+      }
+    ],
+    "evidence_required": [
+      "Erasure policy",
+      "Automated data lifecycle logs",
+      "Retention justification records"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-SecuritySafeguards",
+    "clause_text": "NGOs must implement technical and organisational measures to prevent personal data breaches. This includes encrypting, monitoring, and access control.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Failure to implement safeguards may result in major breach penalties (up to ₹250 crore)."
+      }
+    ],
+    "evidence_required": [
+      "Security audit reports",
+      "Encryption standards used",
+      "Incident response plan"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-ChildConsentVerification",
+    "clause_text": "Before processing any personal data of a child (<18 years) or a person with disability who has a lawful guardian, NGOs must obtain verifiable parental or guardian consent.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Lack of verifiable consent may result in suspension or fines under Section 9."
+      }
+    ],
+    "evidence_required": [
+      "Parent/guardian identity verification logs",
+      "Consent form copy",
+      "Digital trail of consent process"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-NoChildAdsTracking",
+    "clause_text": "Data Fiduciaries shall not undertake tracking, behavioural monitoring, or targeted advertising directed at children.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Violation can lead to enhanced scrutiny and potential blacklisting."
+      }
+    ],
+    "evidence_required": [
+      "Advertising campaign records",
+      "Third-party platform integration logs",
+      "Marketing audit trail"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-DPIA",
+    "clause_text": "Significant Data Fiduciaries must periodically conduct Data Protection Impact Assessments, including risk management strategies for protecting Data Principals' rights.",
+    "category": "mandatory-if-designated",
+    "penalties": [
+      {
+        "details": "Omission of DPIA may result in audit failure and compliance breach."
+      }
+    ],
+    "evidence_required": [
+      "DPIA reports",
+      "Board review documentation",
+      "Mitigation plan and status"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-Exemptions",
+    "clause_text": "Provisions of the DPDP Act shall not apply to personal data processing for legal enforcement, judicial functions, or research/statistics where the data is not used to make decisions about the Data Principal.",
+    "category": "exempted",
+    "penalties": [],
+    "evidence_required": [
+      "Exemption justification",
+      "Anonymization/aggregation procedures",
+      "Documentation for audit trails"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-StartupRelaxation",
+    "clause_text": "The Central Government may exempt certain Data Fiduciaries including startups from the application of sections like 5, 10, and 11 for a specified period.",
+    "category": "conditional",
+    "penalties": [],
+    "evidence_required": [
+      "Government notification of exemption",
+      "Startup recognition documents",
+      "Compliance plan post exemption period"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-BoardEnforcement-Breach",
+    "clause_text": "The Data Protection Board of India (DPBI) may initiate inquiries, issue directives, and impose penalties in the event of a personal data breach or failure to meet obligations by NGOs as Data Fiduciaries.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Penalties up to ₹250 crore for serious breaches post-inquiry by the Board."
+      }
+    ],
+    "evidence_required": [
+      "Board communication records",
+      "Remedial action plan",
+      "Breach documentation logs"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-RightToAppeal",
+    "clause_text": "NGOs have the right to appeal any order of the DPBI to the Telecom Disputes Settlement and Appellate Tribunal (TDSAT) within 60 days, with proceedings preferably digital by design.",
+    "category": "remedial",
+    "penalties": [],
+    "evidence_required": [
+      "Tribunal filing copies",
+      "DPBI order under appeal",
+      "Legal representation record"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-VoluntaryUndertaking",
+    "clause_text": "An NGO may submit a voluntary undertaking to the Board in case of a compliance lapse, agreeing to remedy the violation within a defined timeline, which may preclude formal penalties.",
+    "category": "remedial",
+    "penalties": [
+      {
+        "details": "Violation of the undertaking terms will be treated as breach and reopen the proceedings."
+      }
+    ],
+    "evidence_required": [
+      "Copy of voluntary undertaking",
+      "Board acceptance order",
+      "Remediation timeline report"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-MediationDirective",
+    "clause_text": "The Board may direct NGOs to resolve disputes with Data Principals through mutual mediation before pursuing enforcement, subject to applicable laws.",
+    "category": "discretionary",
+    "penalties": [],
+    "evidence_required": [
+      "Board mediation directive",
+      "Mediation agreement or log",
+      "Grievance resolution report"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-PenaltyCalculation",
+    "clause_text": "In the event of a significant breach, penalties will be calculated based on factors like data type, harm caused, repeat offenses, remedial actions taken, and proportionality.",
+    "category": "enforcement",
+    "penalties": [
+      {
+        "details": "Up to ₹250 crore depending on the gravity, repetition, or benefit derived from the breach."
+      }
+    ],
+    "evidence_required": [
+      "Breach impact analysis",
+      "Mitigation efforts documentation",
+      "DPBI penalty determination report"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-GoodFaithImmunity",
+    "clause_text": "No legal proceedings shall lie against the Central Government, DPBI, or its officials for actions taken in good faith under the DPDP Act.",
+    "category": "administrative",
+    "penalties": [ {"details": "Not Applicable"} ],
+    "evidence_required": ["Not Applicable"]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-BlockingProvision",
+    "clause_text": "If an NGO is penalized for repeated data breaches, the government may block public access to its digital platforms upon DPBI referral and post-hearing, in public interest.",
+    "category": "enforcement",
+    "penalties": [
+      {
+        "details": "Blocking of websites, apps, portals used to offer services in India."
+      }
+    ],
+    "evidence_required": [
+      "Board penalty notices",
+      "Hearing record before blocking",
+      "Blocking order by authorized officer"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-LawSupremacy",
+    "clause_text": "In case of conflict with any other Indian law, the DPDP Act will prevail to the extent of such conflict.",
+    "category": "interpretative",
+    "penalties": [],
+    "evidence_required": []
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-NoCivilJurisdiction",
+    "clause_text": "No civil court shall have jurisdiction on matters where the Data Protection Board of India has authority under this Act. No injunction shall be granted against actions under this Act.",
+    "category": "jurisdictional",
+    "penalties": [],
+    "evidence_required": []
+  },
+  {
+    "country": "IN",
+    "law": "DPDP Act, 2023",
+    "clause_id": "IN-DPDP-Overrides-OtherLaws",
+    "clause_text": "The DPDP Act repeals Section 43A of the IT Act and modifies provisions of the RTI Act and TRAI Act to align with new data protection rules. NGOs must revise data policies accordingly.",
+    "category": "compliance revision",
+    "penalties": [],
+    "evidence_required": [
+      "Updated privacy policy",
+      "Removal of legacy IT Act references",
+      "Compliance mapping matrix"
+    ]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006 (as amended till 2023)",
+    "clause_id": "IN-EIA-PublicHearing-Notice",
+    "clause_text": "SPCB/UTPCC must advertise the public hearing with 30 days’ notice in both national and local language newspapers after receiving the draft EIA report.",
+    "category": "mandatory",
+    "penalties": [],
+    "evidence_required": ["Copy of advertisement", "Proof of date of publication", "SPCB hearing schedule"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006 (as amended till 2023)",
+    "clause_id": "IN-EIA-PostClearance-Reporting",
+    "clause_text": "Project proponents must submit compliance reports (hard and soft copy) every 6 months post-environmental clearance (by 1st June and 1st December).",
+    "category": "mandatory",
+    "penalties": [],
+    "evidence_required": ["Signed compliance report", "Proof of timely submission", "Acknowledgement receipt"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006 (as amended till 2023)",
+    "clause_id": "IN-EIA-ConsultantAccreditation",
+    "clause_text": "Only consultants accredited by QCI/NABET can prepare EIA/EMP reports and present before EAC or SEAC.",
+    "category": "mandatory",
+    "penalties": [
+      {
+        "details": "Use of unaccredited consultants can lead to rejection of application."
+      }
+    ],
+    "evidence_required": ["QCI/NABET accreditation certificate", "Consultant contract", "Presentation slides"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006 (as amended till 2023)",
+    "clause_id": "IN-EIA-FalseInformation",
+    "clause_text": "Submission of false or misleading data in EIA or supporting documents can result in rejection or cancellation of Environmental Clearance.",
+    "category": "prohibited",
+    "penalties": [
+      {
+        "details": "Leads to disqualification, blacklisting, or cancellation of clearance."
+      }
+    ],
+    "evidence_required": ["Original submission", "Corrected data", "Board hearing transcript"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006 (as amended till 2023)",
+    "clause_id": "IN-EIA-ECTransfer",
+    "clause_text": "Prior Environmental Clearance may be transferred to another legal person with written consent of the transferor and approval of the regulatory authority.",
+    "category": "conditional",
+    "penalties": [],
+    "evidence_required": ["Transferor's NOC", "Approval from MoEF/SEIAA", "Updated EC certificate"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006",
+    "clause_id": "IN-EIA-9-Validity",
+    "clause_text": "Validity of Environmental Clearance: Specifies validity period for EC based on project type: 10 years for river valley, project life (max 30 yrs) for mining, and 5 years for others.",
+    "category": "mandatory",
+    "penalties": [{"details": "EC lapses if construction/operations do not commence within validity period."}],
+    "evidence_required": ["Updated Form 1", "Supplementary Form 1A", "Proof of application within validity period"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006",
+    "clause_id": "IN-EIA-9A-COVID-Extension",
+    "clause_text": "COVID-19 Extension Relief: Period from 1 April 2020 to 31 March 2021 excluded from EC validity computation due to COVID-19 disruptions.",
+    "category": "advisory",
+    "penalties": [],
+    "evidence_required": ["Original EC letter", "Proof of project delay due to pandemic restrictions"]
+  },
+  {
+    "country": "IN",
+    "law": "EIA Notification, 2006",
+    "clause_id": "IN-EIA-10-PostClearance-Monitoring",
+    "clause_text": "Post-Environmental Clearance Monitoring: Mandates public disclosure, submission of biannual compliance reports, and local authority dissemination.",
+    "category": "mandatory",
+    "penalties": [{"details": "Non-compliance may result in EC review or cancellation."}],
+    "evidence_required": ["Newspaper ads", "Website disclosure", "Half-yearly compliance reports"]
+  },
+  {
+    "country": "IN",
+    "law": "Indian Trusts Act, 1882",
+    "clause_id": "IN-TrustsAct1882-DutiesExecution",
+    "clause_text": "A trustee is bound to fulfill the purpose of the trust and to obey the directions of the author of the trust.",
+    "category": "mandatory",
+    "penalties": [{"details": "May be removed by court or held liable for breach of trust."}],
+    "evidence_required": ["Trust deed", "Board resolutions", "Activity reports aligned with trust objectives"]
+  },
+  {
+    "country": "IN",
+    "law": "Indian Trusts Act, 1882",
+    "clause_id": "IN-TrustsAct1882-DelegationRestriction",
+    "clause_text": "A trustee cannot delegate their office or duties unless explicitly allowed by the trust deed, necessity, regular course of business, or beneficiary consent.",
+    "category": "mandatory",
+    "penalties": [{"details": "Delegation in violation may result in legal action or removal."}],
+    "evidence_required": ["Trust deed with delegation clause (if any)", "Written consent from beneficiaries (if applicable)"]
+  },
+  {
+    "country": "IN",
+    "law": "Indian Trusts Act, 1882",
+    "clause_id": "IN-TrustsAct1882-ProfitProhibition",
+    "clause_text": "Trustee may not use trust property for personal profit or unrelated purposes.",
+    "category": "mandatory",
+    "penalties": [{"details": "Trustee must restore gains and may be removed by the court."}],
+    "evidence_required": ["Asset register", "Bank statements", "Conflict of interest declarations"]
+  },
+  {
+    "country": "IN",
+    "law": "Indian Trusts Act, 1882",
+    "clause_id": "IN-TrustsAct1882-CoTrusteeJointAction",
+    "clause_text": "All co-trustees must act jointly unless otherwise provided in the instrument of trust.",
+    "category": "mandatory",
+    "penalties": [{"details": "Unilateral actions may be declared void or invalid."}],
+    "evidence_required": ["Minutes of meetings", "Signed joint resolutions", "Trust deed clauses"]
+  },
+  {
+    "country": "IN",
+    "law": "Indian Trusts Act, 1882",
+    "clause_id": "IN-TrustsAct1882-RemunerationProhibition",
+    "clause_text": "Trustees are not entitled to remuneration unless specifically allowed by the trust deed or agreed by beneficiaries or the court.",
+    "category": "mandatory",
+    "penalties": [{"details": "Unjust enrichment may need to be refunded."}],
+    "evidence_required": ["Trust deed clause on remuneration", "Payment vouchers", "Beneficiary consent (if applicable)"]
+  },
+  {
+    "country": "IN",
+    "law": "Prevention of Terrorism Act, 2002",
+    "clause_id": "IN-POTA-22-FundRaising",
+    "clause_text": "It is an offence to invite, receive, or provide money or property with the intention or reasonable suspicion that it may be used for terrorism.",
+    "category": "prohibited",
+    "penalties": [{"details": "Punishable with imprisonment up to life or fine or both."}],
+    "evidence_required": ["Bank transaction records", "Funding contracts", "Communication logs indicating intent"]
+  },
+  {
+    "country": "IN",
+    "law": "Prevention of Terrorism Act, 2002",
+    "clause_id": "IN-POTA-14-DisclosureDuty",
+    "clause_text": "Any individual or entity must furnish information relevant to a terrorism offence when requested by investigating officers.",
+    "category": "mandatory",
+    "penalties": [{"details": "Punishable with imprisonment up to 3 years or fine or both for failure or false submission."}],
+    "evidence_required": ["Information request notice", "Submitted documents or failure reports"]
+  },
+  {
+    "country": "IN",
+    "law": "Prevention of Terrorism Act, 2002",
+    "clause_id": "IN-POTA-08-ProceedsForfeiture",
+    "clause_text": "Property seized as proceeds of terrorism can be forfeited even if the person is not prosecuted, once confirmed by a Special Court.",
+    "category": "prohibited",
+    "penalties": [{"details": "Permanent forfeiture of movable or immovable property to the government."}],
+    "evidence_required": ["Seizure notice", "Property ownership documents", "Financial trail linked to terrorism"]
+  },
+  {
+    "country": "IN",
+    "law": "Prevention of Terrorism Act, 2002",
+    "clause_id": "IN-POTA-20-Membership",
+    "clause_text": "A person commits an offence if they belong or profess to belong to an organisation declared as terrorist.",
+    "category": "prohibited",
+    "penalties": [{"details": "Imprisonment up to 10 years or fine or both."}],
+    "evidence_required": ["Public statements", "Membership records", "Social media presence"]
+  },
+  {
+    "country": "IN",
+    "law": "Prevention of Terrorism Act, 2002",
+    "clause_id": "IN-POTA-21-MeetingsSupport",
+    "clause_text": "It is an offence to arrange, assist, or address meetings that support terrorist organisations.",
+    "category": "prohibited",
+    "penalties": [{"details": "Imprisonment up to 10 years or fine or both."}],
+    "evidence_required": ["Event recordings", "Invitations or speaker lists", "Meeting transcripts"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-1A-MemorandumAssociation",
+    "clause_text": "Every society must file a memorandum of association including its name, objectives, and details of the governing body along with certified rules and regulations.",
+    "category": "mandatory",
+    "penalties": [],
+    "evidence_required": ["Memorandum of association", "Rules and regulations document", "Registrar filing receipts"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-4-AnnualFiling",
+    "clause_text": "A society must annually file a list of its governing body members with the Registrar.",
+    "category": "mandatory",
+    "penalties": [{"details": "Registrar may take action including issuance of notices and potential deregistration for persistent non-compliance."}],
+    "evidence_required": ["Annual list of managing committee", "Filing confirmation from Registrar"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-12D-AccountsAuditing",
+    "clause_text": "Societies must maintain regular accounts, in a form approved by the Registrar, and get them audited annually by a Chartered Accountant or an authorized person.",
+    "category": "mandatory",
+    "penalties": [{"details": "Improper accounts may lead to rejection of renewal or cancellation of registration."}],
+    "evidence_required": ["Books of accounts", "Auditor's report", "Balance sheet and income-expenditure statements"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-12E-AuditIrregularities",
+    "clause_text": "Auditor must report any irregular, illegal, or improper expenditure and possible misconduct by the governing body.",
+    "category": "mandatory",
+    "penalties": [{"details": "Findings may lead to investigation, penalties, or criminal proceedings for breach of trust."}],
+    "evidence_required": ["Auditor's report with details of irregularities", "Registrar's notice or inquiry document"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-13-Dissolution",
+    "clause_text": "A society may be dissolved by a 3/5th majority of members present, and must settle all assets and liabilities accordingly.",
+    "category": "optional",
+    "penalties": [],
+    "evidence_required": ["Meeting resolution for dissolution", "Asset/liability settlement plan", "Court orders in case of disputes"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-14-NoProfitToMembers",
+    "clause_text": "Upon dissolution, no member shall receive any profit from the remaining property. It must be given to another society or the government.",
+    "category": "mandatory",
+    "penalties": [{"details": "Distribution of profit to members is a violation and may attract penalties and recovery."}],
+    "evidence_required": ["Asset transfer deed to another society", "Registrar or court documentation"]
+  },
+  {
+    "country": "IN",
+    "law": "Societies Registration Act, 1860",
+    "clause_id": "IN-SRA-19-InspectionOfDocuments",
+    "clause_text": "Any person may inspect documents filed with the Registrar by paying the prescribed fee and obtain certified copies for legal purposes.",
+    "category": "optional",
+    "penalties": [],
+    "evidence_required": ["Certified copies of filed documents", "Fee payment receipts"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-18-TrustRegistration",
+    "clause_text": "Every public trust must apply for registration within three months of creation or applicability of the Act.",
+    "category": "mandatory",
+    "penalties": [{"details": "Unregistered trusts cannot enforce rights through court."}],
+    "evidence_required": ["Application for registration", "List of movable and immovable properties", "Trust deed copy"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-36B-PropertyRegister",
+    "clause_text": "Maintain a register of all movable and immovable properties, signed and verified by trustees.",
+    "category": "mandatory",
+    "penalties": [{"details": "Failure to maintain accurate property records can lead to investigation by Charity Commissioner."}],
+    "evidence_required": ["Property register with asset descriptions", "Verification signatures of trustees"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-36-ImmovableAlienation",
+    "clause_text": "Sale, gift, or lease of immovable property exceeding specified term requires prior sanction of the Charity Commissioner.",
+    "category": "restrictive",
+    "penalties": [{"details": "Unauthorised alienation is invalid and subject to penalty."}],
+    "evidence_required": ["Approval letter from Charity Commissioner", "Property transaction documents"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-33-34-Audit",
+    "clause_text": "Trustees must get accounts audited annually and submit balance sheet and audit report to Charity Commissioner.",
+    "category": "mandatory",
+    "penalties": [{"details": "Penalty for failure to submit audit as per Section 66."}],
+    "evidence_required": ["Auditor’s balance sheet and report", "Proof of filing to Charity Office"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-Trustee-Duty",
+    "clause_text": "Trustees must manage the trust property with the same care as a man of ordinary prudence.",
+    "category": "mandatory",
+    "penalties": [{"details": "Misconduct or negligence can result in removal or liability."}],
+    "evidence_required": ["Trustee meeting minutes", "Financial records showing prudent use of assets"]
+  },
+  {
+    "country": "IN",
+    "law": "Bombay Public Trusts Act, 1950",
+    "clause_id": "IN-BPTA-66-Penalties",
+    "clause_text": "Contravention of various provisions may lead to fines up to the amount specified under Section 66.",
+    "category": "penalty",
+    "penalties": [{"details": "Fine as per the table under Section 66."}],
+    "evidence_required": ["Notice of penalty from Charity Commissioner", "Proof of violation"]
+  },
+  {
+    "country": "IN",
+    "law": "Companies Act, 2013",
+    "clause_id": "IN-CA-Section8",
+    "clause_text": "Section 8: Allows formation of companies with charitable objects without 'Limited' in name, provided profits are applied to its objectives and dividends are prohibited.",
+    "category": "mandatory",
+    "penalties": [{"details": "Fine between ₹10 lakh to ₹1 crore. Directors/officers may be imprisoned up to 3 years or fined ₹25,000 to ₹25 lakh, or both."}],
+    "evidence_required": ["Central Government license under Section 8", "Charitable object clauses in memorandum", "Proof of income application toward objects", "Declaration of non-distribution of dividends"]
+  },
+  {
+    "country": "IN",
+    "law": "Companies Act, 2013",
+    "clause_id": "IN-CA-Section12",
+    "clause_text": "Section 12: Every company must have a registered office capable of receiving notices and communication from the 15th day of incorporation. Address verification must be filed within 30 days.",
+    "category": "mandatory",
+    "penalties": [{"details": "Penalty of ₹1,000 per day for default, up to ₹1,00,000."}],
+    "evidence_required": ["Verification form filed with Registrar", "Proof of registered office address", "Company seal and business communication with address"]
+  },
+  {
+    "country": "IN",
+    "law": "Companies Act, 2013",
+    "clause_id": "IN-CA-Section11",
+    "clause_text": "Section 11: Companies cannot commence business unless the paid-up capital requirement is met and a declaration is filed by a director. Also requires verification of registered office.",
+    "category": "mandatory",
+    "penalties": [{"details": "Company: up to ₹5,000. Officers: ₹1,000/day of default. Registrar may remove name from register if inactive for 180 days."}],
+    "evidence_required": ["Director's declaration of capital received", "Verification of registered office filed with Registrar", "Certificate of incorporation"]
+  },
+  {
+    "country": "IN",
+    "law": "FCRA, 2010 & Rules, 2011",
+    "clause_id": "IN-FCRA-12(4)(f)-PublicInterest",
+    "clause_text": "Section 12(4)(f) and Rule 5: The government may deny registration for foreign funding if it believes the NGO's activities could prejudice the public interest, economic or scientific interests of the State. 'Political nature' is broadly defined.",
+    "category": "mandatory",
+    "penalties": [{"details": "Denial or cancellation of FCRA registration, freezing of bank accounts, and criminal prosecution in some cases."}],
+    "evidence_required": ["Registration under FCRA", "Detailed activity reports", "Proof of non-political activities", "Annual financial returns submitted to the Ministry of Home Affairs"]
+  },
+  {
+    "country": "IN",
+    "law": "ICCPR (via UN SR Report)",
+    "clause_id": "IN-UNSR-Finding-2016",
+    "clause_text": "UN Special Rapporteur Finding (2016): Access to foreign funding is part of the right to freedom of association. The FCRA violates international obligations due to vague terms like 'public interest'.",
+    "category": "advisory",
+    "penalties": [{"details": "Risk of non-alignment with international human rights norms. Subject to international criticism and reputational damage."}],
+    "evidence_required": ["UN Human Rights Committee communications", "OHCHR and UN SR reports", "Legal analysis of domestic law vs ICCPR obligations"]
+  },
+  {
+    "country": "IN",
+    "law": "Companies Act, 2013",
+    "clause_id": "IN-CSR-Rule4-ImplementingAgencies",
+    "clause_text": "Rule 4(2) - CSR Implementing Agencies: Companies may undertake CSR activities through a registered trust, society, or Section 8 company. If not established by the company, such entity must have a track record of at least three years in similar activities.",
+    "category": "mandatory",
+    "penalties": [{"details": "Expenditure through unqualified entities may be disallowed as CSR spend and reported as a compliance deviation."}],
+    "evidence_required": ["Proof of registration (Trust Deed/Society Certificate/Section 8 Incorporation)", "Documents showing 3-year track record in CSR or similar programs", "CSR agreement or MoU with company"]
+  },
+  {
+    "country": "IN",
+    "law": "Companies Act, 2013",
+    "clause_id": "IN-CSR-Rule4-DisallowedExpenditure",
+    "clause_text": "Rule 4(5) and 4(7): CSR activities that benefit only the employees of the company or constitute political contributions under Section 182 shall not be considered as valid CSR expenditure.",
+    "category": "mandatory",
+    "penalties": [{"details": "Such expenditure will be disallowed and may lead to explanation required in Board Report and audit qualifications."}],
+    "evidence_required": ["List of CSR beneficiaries", "Statement of expenditure excluding political contributions", "Board report CSR annexure"]
+  }
+]

@@ -1,0 +1,5 @@
+# analyze_requirements.txt
+boto3
+python-docx
+PyMuPDF
+requests 

@@ -1,24 +1,63 @@
-org: ngocompliance
-app: compliance-analyzer-api
-# ... NEW, CORRECT VERSION ...
 service: compliance-analyzer-api
-frameworkVersion: '4' # Since you downgraded to V3
 
 provider:
   name: aws
   runtime: python3.9
-  region: us-east-2 # <-- CHANGE TO us-east-2
+  region: us-west-2
   profile: hackathon-sso
-  httpApi: # <--- Add this new top-level block
-    cors: true
+  environment:
+    S3_BUCKET_NAME: ngo-compliance-crawler-dtcc # Replace with YOUR bucket
   role: arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole
+  
+  httpApi:
+    cors:
+      allowedOrigins:
+        - 'http://localhost:5173'
+        - 'http://localhost:5174'
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - POST
+        - OPTIONS
+  
+  ecr:
+    images:
+      polisee-app:
+        path: ./
+
+# In your serverless.yml file
 
 functions:
   analyze:
-    handler: handler.analyze
-    timeout: 30 
+    image:
+      name: polisee-app
+      command:
+        - app.analyze
+    memorySize: 2048
+    timeout: 120
     events:
+      # We are adding the 'payload' property to fix the integration
       - httpApi:
           path: /analyze
           method: post
-          payload: '1.0' # <-- ADD THIS LINE
+          payload: '1.0' # <--- THIS IS THE CRITICAL FIX
+
+  # ... (your other functions remain the same) ...
+
+  mailer:
+    image:
+      name: polisee-app
+      command:
+        - app.send_alert # Points to app.py, send_alert function
+    memorySize: 256
+    timeout: 10
+
+  crawler:
+    image:
+      name: polisee-app
+      command:
+        - app.check_for_changes # Points to app.py, check_for_changes function
+    memorySize: 256
+    timeout: 20
+    events:
+      - schedule: rate(1 day)

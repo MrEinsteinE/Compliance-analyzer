@@ -4,19 +4,38 @@
     "servicePath": "D:\\DTCC\\AIStudio\\serverless.yml",
     "serviceConfigFileName": "serverless.yml",
     "service": {
-      "org": "ngocompliance",
-      "app": "compliance-analyzer-api",
       "service": "compliance-analyzer-api",
-      "frameworkVersion": "4",
       "provider": {
         "name": "aws",
         "runtime": "python3.9",
-        "region": "us-east-2",
+        "region": "us-west-2",
         "profile": "hackathon-sso",
-        "httpApi": {
-          "cors": true
+        "environment": {
+          "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
         },
         "role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole",
+        "httpApi": {
+          "cors": {
+            "allowedOrigins": [
+              "http://localhost:5173",
+              "http://localhost:5174"
+            ],
+            "allowedHeaders": [
+              "Content-Type"
+            ],
+            "allowedMethods": [
+              "POST",
+              "OPTIONS"
+            ]
+          }
+        },
+        "ecr": {
+          "images": {
+            "polisee-app": {
+              "path": "./"
+            }
+          }
+        },
         "stage": "dev",
         "versionFunctions": true,
         "compiledCloudFormationTemplate": {
@@ -29,32 +48,161 @@
                 "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-analyze"
               }
             },
+            "MailerLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-mailer"
+              }
+            },
+            "CrawlerLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-crawler"
+              }
+            },
             "AnalyzeLambdaFunction": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
                 "Code": {
-                  "S3Bucket": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
-                  "S3Key": "serverless/compliance-analyzer-api/dev/1749582592811-2025-06-10T19:09:52.811Z/compliance-analyzer-api.zip"
+                  "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
                 },
-                "Handler": "handler.analyze",
-                "Runtime": "python3.9",
+                "ImageConfig": {
+                  "Command": [
+                    "app.analyze"
+                  ]
+                },
+                "PackageType": "Image",
                 "FunctionName": "compliance-analyzer-api-dev-analyze",
-                "MemorySize": 1024,
-                "Timeout": 30,
+                "MemorySize": 2048,
+                "Timeout": 120,
+                "Environment": {
+                  "Variables": {
+                    "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                  }
+                },
                 "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
               },
               "DependsOn": [
                 "AnalyzeLogGroup"
               ]
             },
-            "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw": {
+            "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AnalyzeLambdaFunction"
                 },
-                "CodeSha256": "5Hn3iEkMDJFk5Gbnj0ZsAIdb85k98myA4g8e4GTYe8o="
+                "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+              }
+            },
+            "MailerLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+                },
+                "ImageConfig": {
+                  "Command": [
+                    "app.send_alert"
+                  ]
+                },
+                "PackageType": "Image",
+                "FunctionName": "compliance-analyzer-api-dev-mailer",
+                "MemorySize": 256,
+                "Timeout": 10,
+                "Environment": {
+                  "Variables": {
+                    "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                  }
+                },
+                "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+              },
+              "DependsOn": [
+                "MailerLogGroup"
+              ]
+            },
+            "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "MailerLambdaFunction"
+                },
+                "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+              }
+            },
+            "CrawlerLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+                },
+                "ImageConfig": {
+                  "Command": [
+                    "app.check_for_changes"
+                  ]
+                },
+                "PackageType": "Image",
+                "FunctionName": "compliance-analyzer-api-dev-crawler",
+                "MemorySize": 256,
+                "Timeout": 20,
+                "Environment": {
+                  "Variables": {
+                    "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                  }
+                },
+                "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+              },
+              "DependsOn": [
+                "CrawlerLogGroup"
+              ]
+            },
+            "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "CrawlerLambdaFunction"
+                },
+                "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+              }
+            },
+            "CrawlerEventsRuleSchedule1": {
+              "Type": "AWS::Events::Rule",
+              "Properties": {
+                "ScheduleExpression": "rate(1 day)",
+                "State": "ENABLED",
+                "Targets": [
+                  {
+                    "Arn": {
+                      "Fn::GetAtt": [
+                        "CrawlerLambdaFunction",
+                        "Arn"
+                      ]
+                    },
+                    "Id": "crawlerSchedule"
+                  }
+                ]
+              }
+            },
+            "CrawlerLambdaPermissionEventsRuleSchedule1": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "CrawlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "events.amazonaws.com",
+                "SourceArn": {
+                  "Fn::GetAtt": [
+                    "CrawlerEventsRuleSchedule1",
+                    "Arn"
+                  ]
+                }
               }
             },
             "HttpApi": {
@@ -65,20 +213,15 @@
                 "CorsConfiguration": {
                   "AllowCredentials": "<REDACTED>",
                   "AllowHeaders": [
-                    "Content-Type",
-                    "X-Amz-Date",
-                    "Authorization",
-                    "X-Api-Key",
-                    "X-Amz-Security-Token",
-                    "X-Amz-User-Agent",
-                    "X-Amzn-Trace-Id"
+                    "Content-Type"
                   ],
                   "AllowMethods": [
-                    "OPTIONS",
-                    "POST"
+                    "POST",
+                    "OPTIONS"
                   ],
                   "AllowOrigins": [
-                    "*"
+                    "http://localhost:5173",
+                    "http://localhost:5174"
                   ]
                 }
               }
@@ -174,7 +317,7 @@
           },
           "Outputs": {
             "ServerlessDeploymentBucketName": {
-              "Value": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
+              "Value": "serverless-framework-deployments-us-west-2-f318c9e5-f073",
               "Export": {
                 "Name": "sls-compliance-analyzer-api-dev-ServerlessDeploymentBucketName"
               }
@@ -182,10 +325,28 @@
             "AnalyzeLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw"
+                "Ref": "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA"
               },
               "Export": {
                 "Name": "sls-compliance-analyzer-api-dev-AnalyzeLambdaFunctionQualifiedArn"
+              }
+            },
+            "MailerLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98"
+              },
+              "Export": {
+                "Name": "sls-compliance-analyzer-api-dev-MailerLambdaFunctionQualifiedArn"
+              }
+            },
+            "CrawlerLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ"
+              },
+              "Export": {
+                "Name": "sls-compliance-analyzer-api-dev-CrawlerLambdaFunctionQualifiedArn"
               }
             },
             "HttpApiId": {
@@ -228,8 +389,14 @@
       },
       "functions": {
         "analyze": {
-          "handler": "handler.analyze",
-          "timeout": 30,
+          "image": {
+            "name": "polisee-app",
+            "command": [
+              "app.analyze"
+            ]
+          },
+          "memorySize": 2048,
+          "timeout": 120,
           "events": [
             {
               "httpApi": {
@@ -243,22 +410,79 @@
           ],
           "name": "compliance-analyzer-api-dev-analyze",
           "package": {},
-          "memory": 1024,
-          "runtime": "python3.9",
+          "memory": 2048,
           "vpc": {},
-          "versionLogicalId": "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw"
+          "versionLogicalId": "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA"
+        },
+        "mailer": {
+          "image": {
+            "name": "polisee-app",
+            "command": [
+              "app.send_alert"
+            ]
+          },
+          "memorySize": 256,
+          "timeout": 10,
+          "events": [],
+          "name": "compliance-analyzer-api-dev-mailer",
+          "package": {},
+          "memory": 256,
+          "vpc": {},
+          "versionLogicalId": "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98"
+        },
+        "crawler": {
+          "image": {
+            "name": "polisee-app",
+            "command": [
+              "app.check_for_changes"
+            ]
+          },
+          "memorySize": 256,
+          "timeout": 20,
+          "events": [
+            {
+              "schedule": "rate(1 day)"
+            }
+          ],
+          "name": "compliance-analyzer-api-dev-crawler",
+          "package": {},
+          "memory": 256,
+          "vpc": {},
+          "versionLogicalId": "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ"
         }
       }
     },
     "provider": {
       "name": "aws",
       "runtime": "python3.9",
-      "region": "us-east-2",
+      "region": "us-west-2",
       "profile": "hackathon-sso",
-      "httpApi": {
-        "cors": true
+      "environment": {
+        "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
       },
       "role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole",
+      "httpApi": {
+        "cors": {
+          "allowedOrigins": [
+            "http://localhost:5173",
+            "http://localhost:5174"
+          ],
+          "allowedHeaders": [
+            "Content-Type"
+          ],
+          "allowedMethods": [
+            "POST",
+            "OPTIONS"
+          ]
+        }
+      },
+      "ecr": {
+        "images": {
+          "polisee-app": {
+            "path": "./"
+          }
+        }
+      },
       "stage": "dev",
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
@@ -271,32 +495,161 @@
               "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-analyze"
             }
           },
+          "MailerLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-mailer"
+            }
+          },
+          "CrawlerLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-crawler"
+            }
+          },
           "AnalyzeLambdaFunction": {
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "S3Bucket": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
-                "S3Key": "serverless/compliance-analyzer-api/dev/1749582592811-2025-06-10T19:09:52.811Z/compliance-analyzer-api.zip"
+                "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
               },
-              "Handler": "handler.analyze",
-              "Runtime": "python3.9",
+              "ImageConfig": {
+                "Command": [
+                  "app.analyze"
+                ]
+              },
+              "PackageType": "Image",
               "FunctionName": "compliance-analyzer-api-dev-analyze",
-              "MemorySize": 1024,
-              "Timeout": 30,
+              "MemorySize": 2048,
+              "Timeout": 120,
+              "Environment": {
+                "Variables": {
+                  "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                }
+              },
               "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
             },
             "DependsOn": [
               "AnalyzeLogGroup"
             ]
           },
-          "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw": {
+          "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AnalyzeLambdaFunction"
               },
-              "CodeSha256": "5Hn3iEkMDJFk5Gbnj0ZsAIdb85k98myA4g8e4GTYe8o="
+              "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+            }
+          },
+          "MailerLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+              },
+              "ImageConfig": {
+                "Command": [
+                  "app.send_alert"
+                ]
+              },
+              "PackageType": "Image",
+              "FunctionName": "compliance-analyzer-api-dev-mailer",
+              "MemorySize": 256,
+              "Timeout": 10,
+              "Environment": {
+                "Variables": {
+                  "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                }
+              },
+              "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+            },
+            "DependsOn": [
+              "MailerLogGroup"
+            ]
+          },
+          "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "MailerLambdaFunction"
+              },
+              "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+            }
+          },
+          "CrawlerLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+              },
+              "ImageConfig": {
+                "Command": [
+                  "app.check_for_changes"
+                ]
+              },
+              "PackageType": "Image",
+              "FunctionName": "compliance-analyzer-api-dev-crawler",
+              "MemorySize": 256,
+              "Timeout": 20,
+              "Environment": {
+                "Variables": {
+                  "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+                }
+              },
+              "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+            },
+            "DependsOn": [
+              "CrawlerLogGroup"
+            ]
+          },
+          "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CrawlerLambdaFunction"
+              },
+              "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+            }
+          },
+          "CrawlerEventsRuleSchedule1": {
+            "Type": "AWS::Events::Rule",
+            "Properties": {
+              "ScheduleExpression": "rate(1 day)",
+              "State": "ENABLED",
+              "Targets": [
+                {
+                  "Arn": {
+                    "Fn::GetAtt": [
+                      "CrawlerLambdaFunction",
+                      "Arn"
+                    ]
+                  },
+                  "Id": "crawlerSchedule"
+                }
+              ]
+            }
+          },
+          "CrawlerLambdaPermissionEventsRuleSchedule1": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CrawlerLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "events.amazonaws.com",
+              "SourceArn": {
+                "Fn::GetAtt": [
+                  "CrawlerEventsRuleSchedule1",
+                  "Arn"
+                ]
+              }
             }
           },
           "HttpApi": {
@@ -307,20 +660,15 @@
               "CorsConfiguration": {
                 "AllowCredentials": "<REDACTED>",
                 "AllowHeaders": [
-                  "Content-Type",
-                  "X-Amz-Date",
-                  "Authorization",
-                  "X-Api-Key",
-                  "X-Amz-Security-Token",
-                  "X-Amz-User-Agent",
-                  "X-Amzn-Trace-Id"
+                  "Content-Type"
                 ],
                 "AllowMethods": [
-                  "OPTIONS",
-                  "POST"
+                  "POST",
+                  "OPTIONS"
                 ],
                 "AllowOrigins": [
-                  "*"
+                  "http://localhost:5173",
+                  "http://localhost:5174"
                 ]
               }
             }
@@ -416,7 +764,7 @@
         },
         "Outputs": {
           "ServerlessDeploymentBucketName": {
-            "Value": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
+            "Value": "serverless-framework-deployments-us-west-2-f318c9e5-f073",
             "Export": {
               "Name": "sls-compliance-analyzer-api-dev-ServerlessDeploymentBucketName"
             }
@@ -424,10 +772,28 @@
           "AnalyzeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw"
+              "Ref": "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA"
             },
             "Export": {
               "Name": "sls-compliance-analyzer-api-dev-AnalyzeLambdaFunctionQualifiedArn"
+            }
+          },
+          "MailerLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98"
+            },
+            "Export": {
+              "Name": "sls-compliance-analyzer-api-dev-MailerLambdaFunctionQualifiedArn"
+            }
+          },
+          "CrawlerLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ"
+            },
+            "Export": {
+              "Name": "sls-compliance-analyzer-api-dev-CrawlerLambdaFunctionQualifiedArn"
             }
           },
           "HttpApiId": {
@@ -469,62 +835,62 @@
       "vpc": {}
     },
     "dashboard": {
-      "isEnabledForService": true,
+      "isEnabledForService": false,
       "requiredAuthentication": false,
-      "orgFeaturesInUse": {
-        "providers": false,
-        "monitoring": true
-      },
-      "orgObservabilityIntegrations": [
-        {
-          "integrationId": "h41U3QmCjvsxtK5QjKCdx9",
-          "awsAccountId": "144274058030",
-          "status": "settingup"
-        }
-      ],
-      "serviceAppId": "cHHymDJQHy91kBMn2V",
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "serviceRawFile": "org: ngocompliance\r\napp: compliance-analyzer-api\r\n# ... NEW, CORRECT VERSION ...\r\nservice: compliance-analyzer-api\r\nframeworkVersion: '4' # Since you downgraded to V3\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-east-2 # <-- CHANGE TO us-east-2\r\n  profile: hackathon-sso\r\n  httpApi: # <--- Add this new top-level block\r\n    cors: true\r\n  role: arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole\r\n\r\nfunctions:\r\n  analyze:\r\n    handler: handler.analyze\r\n    timeout: 30 \r\n    events:\r\n      - httpApi:\r\n          path: /analyze\r\n          method: post\r\n          payload: '1.0' # <-- ADD THIS LINE",
+    "serviceRawFile": "service: compliance-analyzer-api\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-west-2\r\n  profile: hackathon-sso\r\n  environment:\r\n    S3_BUCKET_NAME: ngo-compliance-crawler-dtcc # Replace with YOUR bucket\r\n  role: arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole\r\n  \r\n  httpApi:\r\n    cors:\r\n      allowedOrigins:\r\n        - 'http://localhost:5173'\r\n        - 'http://localhost:5174'\r\n      allowedHeaders:\r\n        - Content-Type\r\n      allowedMethods:\r\n        - POST\r\n        - OPTIONS\r\n  \r\n  ecr:\r\n    images:\r\n      polisee-app:\r\n        path: ./\r\n\r\n# In your serverless.yml file\r\n\r\nfunctions:\r\n  analyze:\r\n    image:\r\n      name: polisee-app\r\n      command:\r\n        - app.analyze\r\n    memorySize: 2048\r\n    timeout: 120\r\n    events:\r\n      # We are adding the 'payload' property to fix the integration\r\n      - httpApi:\r\n          path: /analyze\r\n          method: post\r\n          payload: '1.0' # <--- THIS IS THE CRITICAL FIX\r\n\r\n  # ... (your other functions remain the same) ...\r\n\r\n  mailer:\r\n    image:\r\n      name: polisee-app\r\n      command:\r\n        - app.send_alert # Points to app.py, send_alert function\r\n    memorySize: 256\r\n    timeout: 10\r\n\r\n  crawler:\r\n    image:\r\n      name: polisee-app\r\n      command:\r\n        - app.check_for_changes # Points to app.py, check_for_changes function\r\n    memorySize: 256\r\n    timeout: 20\r\n    events:\r\n      - schedule: rate(1 day)",
     "command": [
       "deploy"
     ],
-    "options": {
-      "aws-profile": "hackathon-sso",
-      "region": "us-east-2"
-    },
+    "options": {},
     "orgId": "bc82fb19-1bc9-49d1-98de-06e5787c1235",
     "orgName": "ngocompliance",
     "userId": "ByNbL4tjWwBtzqDYLZ",
     "userName": "ngocompliance",
     "serviceProviderAwsAccountId": "144274058030",
     "serviceProviderAwsCfStackName": "compliance-analyzer-api-dev",
-    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-2:144274058030:stack/compliance-analyzer-api-dev/6d68f260-45ef-11f0-8aff-0a401fa9c27b",
-    "serviceProviderAwsCfStackCreated": "2025-06-10T11:38:28.511Z",
-    "serviceProviderAwsCfStackUpdated": "2025-06-10T19:04:02.065Z",
-    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-west-2:144274058030:stack/compliance-analyzer-api-dev/eff28010-46fe-11f0-8790-02fdba4f0a8b",
+    "serviceProviderAwsCfStackCreated": "2025-06-11T20:02:01.124Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
+        "OutputKey": "MailerLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-west-2:144274058030:function:compliance-analyzer-api-dev-mailer:8",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-compliance-analyzer-api-dev-MailerLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "CrawlerLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-west-2:144274058030:function:compliance-analyzer-api-dev-crawler:8",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-compliance-analyzer-api-dev-CrawlerLambdaFunctionQualifiedArn"
+      },
+      {
         "OutputKey": "HttpApiId",
-        "OutputValue": "6p5gwei8hj",
+        "OutputValue": "fd6pujaxck",
         "Description": "Id of the HTTP API",
         "ExportName": "sls-compliance-analyzer-api-dev-HttpApiId"
       },
       {
         "OutputKey": "AnalyzeLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-2:144274058030:function:compliance-analyzer-api-dev-analyze:13",
+        "OutputValue": "arn:aws:lambda:us-west-2:144274058030:function:compliance-analyzer-api-dev-analyze:11",
         "Description": "Current Lambda function version",
         "ExportName": "sls-compliance-analyzer-api-dev-AnalyzeLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "ServerlessDeploymentBucketName",
-        "OutputValue": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
+        "OutputValue": "serverless-framework-deployments-us-west-2-f318c9e5-f073",
         "ExportName": "sls-compliance-analyzer-api-dev-ServerlessDeploymentBucketName"
       },
       {
         "OutputKey": "HttpApiUrl",
-        "OutputValue": "https://6p5gwei8hj.execute-api.us-east-2.amazonaws.com",
+        "OutputValue": "https://fd6pujaxck.execute-api.us-west-2.amazonaws.com",
         "Description": "URL of the HTTP API",
         "ExportName": "sls-compliance-analyzer-api-dev-HttpApiUrl"
       }
@@ -539,32 +905,161 @@
             "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-analyze"
           }
         },
+        "MailerLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-mailer"
+          }
+        },
+        "CrawlerLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/compliance-analyzer-api-dev-crawler"
+          }
+        },
         "AnalyzeLambdaFunction": {
           "Type": "AWS::Lambda::Function",
           "Properties": {
             "Code": {
-              "S3Bucket": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
-              "S3Key": "serverless/compliance-analyzer-api/dev/1749582592811-2025-06-10T19:09:52.811Z/compliance-analyzer-api.zip"
+              "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
             },
-            "Handler": "handler.analyze",
-            "Runtime": "python3.9",
+            "ImageConfig": {
+              "Command": [
+                "app.analyze"
+              ]
+            },
+            "PackageType": "Image",
             "FunctionName": "compliance-analyzer-api-dev-analyze",
-            "MemorySize": 1024,
-            "Timeout": 30,
+            "MemorySize": 2048,
+            "Timeout": 120,
+            "Environment": {
+              "Variables": {
+                "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+              }
+            },
             "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
           },
           "DependsOn": [
             "AnalyzeLogGroup"
           ]
         },
-        "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw": {
+        "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "AnalyzeLambdaFunction"
             },
-            "CodeSha256": "5Hn3iEkMDJFk5Gbnj0ZsAIdb85k98myA4g8e4GTYe8o="
+            "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+          }
+        },
+        "MailerLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+            },
+            "ImageConfig": {
+              "Command": [
+                "app.send_alert"
+              ]
+            },
+            "PackageType": "Image",
+            "FunctionName": "compliance-analyzer-api-dev-mailer",
+            "MemorySize": 256,
+            "Timeout": 10,
+            "Environment": {
+              "Variables": {
+                "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+              }
+            },
+            "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+          },
+          "DependsOn": [
+            "MailerLogGroup"
+          ]
+        },
+        "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "MailerLambdaFunction"
+            },
+            "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+          }
+        },
+        "CrawlerLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "ImageUri": "144274058030.dkr.ecr.us-west-2.amazonaws.com/serverless-compliance-analyzer-api-dev@sha256:595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+            },
+            "ImageConfig": {
+              "Command": [
+                "app.check_for_changes"
+              ]
+            },
+            "PackageType": "Image",
+            "FunctionName": "compliance-analyzer-api-dev-crawler",
+            "MemorySize": 256,
+            "Timeout": 20,
+            "Environment": {
+              "Variables": {
+                "S3_BUCKET_NAME": "ngo-compliance-crawler-dtcc"
+              }
+            },
+            "Role": "arn:aws:iam::144274058030:role/MyNgoComplianceLambdaRole"
+          },
+          "DependsOn": [
+            "CrawlerLogGroup"
+          ]
+        },
+        "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "CrawlerLambdaFunction"
+            },
+            "CodeSha256": "595e533f7bddfe84ada1317a1d156a709b1311008a60fab4920ff96a7d0da7ef"
+          }
+        },
+        "CrawlerEventsRuleSchedule1": {
+          "Type": "AWS::Events::Rule",
+          "Properties": {
+            "ScheduleExpression": "rate(1 day)",
+            "State": "ENABLED",
+            "Targets": [
+              {
+                "Arn": {
+                  "Fn::GetAtt": [
+                    "CrawlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Id": "crawlerSchedule"
+              }
+            ]
+          }
+        },
+        "CrawlerLambdaPermissionEventsRuleSchedule1": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "CrawlerLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "events.amazonaws.com",
+            "SourceArn": {
+              "Fn::GetAtt": [
+                "CrawlerEventsRuleSchedule1",
+                "Arn"
+              ]
+            }
           }
         },
         "HttpApi": {
@@ -574,20 +1069,15 @@
             "ProtocolType": "HTTP",
             "CorsConfiguration": {
               "AllowHeaders": [
-                "Content-Type",
-                "X-Amz-Date",
-                "Authorization",
-                "X-Api-Key",
-                "X-Amz-Security-Token",
-                "X-Amz-User-Agent",
-                "X-Amzn-Trace-Id"
+                "Content-Type"
               ],
               "AllowMethods": [
-                "OPTIONS",
-                "POST"
+                "POST",
+                "OPTIONS"
               ],
               "AllowOrigins": [
-                "*"
+                "http://localhost:5173",
+                "http://localhost:5174"
               ]
             }
           }
@@ -683,7 +1173,7 @@
       },
       "Outputs": {
         "ServerlessDeploymentBucketName": {
-          "Value": "serverless-framework-deployments-us-east-2-426aa2c2-e6a5",
+          "Value": "serverless-framework-deployments-us-west-2-f318c9e5-f073",
           "Export": {
             "Name": "sls-compliance-analyzer-api-dev-ServerlessDeploymentBucketName"
           }
@@ -691,10 +1181,28 @@
         "AnalyzeLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "AnalyzeLambdaVersion1HNTILUkHTZYj3EJVYm9G7aqtNIKMgSI9bcXdL5sdw"
+            "Ref": "AnalyzeLambdaVersionlqvHYMYyVNmEoTTWCdYXnsZegdWE0x72wm4ZF1GYA"
           },
           "Export": {
             "Name": "sls-compliance-analyzer-api-dev-AnalyzeLambdaFunctionQualifiedArn"
+          }
+        },
+        "MailerLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "MailerLambdaVersion3dZxzi4LaZs92jUflv58l6dZnKrZw1xd1NrzmywFo98"
+          },
+          "Export": {
+            "Name": "sls-compliance-analyzer-api-dev-MailerLambdaFunctionQualifiedArn"
+          }
+        },
+        "CrawlerLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "CrawlerLambdaVersionIoaOkAGeOP8dJwjvntHemGd4GnelTUhQEpk5TGjCQ"
+          },
+          "Export": {
+            "Name": "sls-compliance-analyzer-api-dev-CrawlerLambdaFunctionQualifiedArn"
           }
         },
         "HttpApiId": {
