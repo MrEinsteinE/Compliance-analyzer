@@ -1,0 +1,23 @@
+{
+  "executive_summary": "The submitted policies show strong alignment with IRS 501(c)(3) requirements regarding political activity bans. However, the public disclosure clause (IRC Section 6104(d)) is not mentioned, representing a moderate compliance risk for US operations.",
+  "compliance_breakdown": [
+    {
+      "clause_id": "US-IRS-501c3-PoliticalActivityBan",
+      "clause_text": "NGOs must not participate in political campaigns or lobbying activities.",
+      "status": "Compliant",
+      "evidence_in_policy": "Our organization and its representatives will not, under any circumstances, endorse or oppose any candidate for public office.",
+      "recommendation": "This clause is well-drafted. To strengthen it, consider adding specific language about prohibiting the use of organizational resources for any campaign-related activities.",
+      "required_evidence": ["Public communications", "Event participation records"],
+      "potential_penalties": [{"details": "Revocation of tax-exempt status."}]
+    },
+    {
+      "clause_id": "US-IRS-6104d-PublicDisclosure",
+      "clause_text": "Tax-exempt organizations must make their approved application and last three annual returns available for public inspection.",
+      "status": "Not Addressed",
+      "evidence_in_policy": "",
+      "recommendation": "Critical Omission: Your policy lacks a public disclosure section. Add a clause stating that the Form 990 and Form 1023 will be made available upon request, as required by law, to ensure transparency and avoid penalties.",
+      "required_evidence": ["Copies of Form 1023/1024", "Copies of the last three Form 990 returns", "Records of public inspection requests"],
+      "potential_penalties": [{"details": "Failure to comply may result in penalties of $20 per day, up to a maximum of $10,000."}]
+    }
+  ]
+}

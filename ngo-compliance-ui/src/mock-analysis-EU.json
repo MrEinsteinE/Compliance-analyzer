@@ -1,0 +1,23 @@
+{
+  "executive_summary": "The data privacy policy shows a foundational understanding of GDPR, particularly regarding lawful processing. However, it is critically deficient in addressing the data subject's 'Right to Erasure' (Article 17), posing a high financial risk for EU operations.",
+  "compliance_breakdown": [
+    {
+      "clause_id": "EU-GDPR-LawfulProcessing",
+      "clause_text": "Personal data must be processed lawfully, fairly and transparently.",
+      "status": "Compliant",
+      "evidence_in_policy": "We are committed to processing all personal data lawfully and will clearly inform individuals about how their data is used.",
+      "recommendation": "This is a good start. To be fully compliant, explicitly state the lawful bases you rely on (e.g., 'Consent', 'Legitimate Interest') for different processing activities.",
+      "required_evidence": ["Privacy policies", "Processing activity logs"],
+      "potential_penalties": [{"details": "Fines up to €20 million or 4% of global turnover."}]
+    },
+    {
+      "clause_id": "EU-GDPR-ErasureRequest",
+      "clause_text": "Data subjects have the right to request erasure of their personal data.",
+      "status": "Non-compliant",
+      "evidence_in_policy": "We retain user data for a period of seven years for our records.",
+      "recommendation": "Major Risk: This policy contradicts the 'Right to be Forgotten.' You must implement a process for handling data erasure requests and update this policy to state that users can request deletion of their data, subject to legal retention obligations.",
+      "required_evidence": ["Deletion logs", "User request records"],
+      "potential_penalties": [{"details": "Complaints to EU data protection authorities."}]
+    }
+  ]
+}

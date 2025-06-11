@@ -1,0 +1,32 @@
+{
+  "executive_summary": "The submitted policy documents show partial compliance with Indian FCRA regulations. While basic registration and reporting clauses are mentioned, specific rules regarding a designated SBI bank account and timely renewal applications are not adequately addressed, posing a medium risk.",
+  "compliance_breakdown": [
+    {
+      "clause_id": "IN-FCRA-11-RegistrationRequirement",
+      "clause_text": "NGOs must obtain FCRA registration or prior permission to accept foreign contributions.",
+      "status": "Compliant",
+      "evidence_in_policy": "Our organization is fully registered under the Foreign Contribution (Regulation) Act, 2010, and maintains all necessary documentation.",
+      "recommendation": "Excellent. Ensure the registration certificate is easily accessible for audits and is displayed on your website for transparency.",
+      "required_evidence": ["FCRA registration certificate", "Prior permission approval documents"],
+      "potential_penalties": [{"details": "Unauthorized acceptance of foreign contributions can lead to cancellation of registration and legal action."}]
+    },
+    {
+      "clause_id": "IN-FCRA-18-AccountMaintenance",
+      "clause_text": "NGOs must maintain a separate bank account at the SBI, New Delhi Main Branch exclusively for the receipt of foreign contributions.",
+      "status": "Non-compliant",
+      "evidence_in_policy": "All donations are processed through our primary State Bank of India account in Mumbai.",
+      "recommendation": "Critical Risk: Your policy indicates use of a general account in the wrong location. You must open a designated 'FCRA Account' at the SBI, New Delhi Main Branch as per regulations and route all foreign funds through it. Update your policy to reflect this specific account.",
+      "required_evidence": ["Bank account statements for designated account", "Bank account opening documents"],
+      "potential_penalties": [{"details": "Non-compliance may result in penalties and scrutiny of financial transactions."}]
+    },
+    {
+      "clause_id": "IN-FCRA-16-RenewalRequirement",
+      "clause_text": "Entities must apply for renewal of FCRA registration at least six months before expiry.",
+      "status": "Not Addressed",
+      "evidence_in_policy": "",
+      "recommendation": "Your policy does not mention a process for FCRA renewal. Add a clause stating that the compliance officer is responsible for initiating the renewal application (Form FC-3C) no later than seven months before the certificate's expiry date to avoid lapse.",
+      "required_evidence": ["Renewal application acknowledgment", "Updated registration certificate"],
+      "potential_penalties": [{"details": "Failure to renew on time may result in expiration of registration."}]
+    }
+  ]
+}
